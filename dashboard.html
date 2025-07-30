@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لوحة تحكم - أطباق ميمو</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    .dashboard {
+      padding: 60px 0;
+      background: #f0f2f5;
+    }
+    .status-badge {
+      padding: 5px 10px;
+      border-radius: 5px;
+      color: white;
+      font-size: 0.9rem;
+    }
+    .جديد { background: #e74c3c; }
+    .جاهز { background: #3498db; }
+    .توصيل { background: #2ecc71; }
+    .order-card {
+      background: white;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .btn-status {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      margin: 3px;
+      cursor: pointer;
+    }
+    .btn-status:disabled { opacity: 0.5; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo"><i class="fas fa-tachometer-alt"></i> لوحة التحكم</div>
+    </div>
+  </header>
+
+  <section class="dashboard">
+    <div class="container">
+      <h2>قائمة الطلبات 📋</h2>
+      <p>هنا تظهر جميع الطلبات الجديدة. يمكنك تحديث الحالة.</p>
+      <button onclick="loadOrders()" class="btn-primary">🔄 تحديث الطلبات</button>
+      <div id="orders">
+        <p>جاري تحميل الطلبات...</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 أطباق ميمو - لوحة التحكم</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // تحميل الطلبات عند فتح لوحة التحكم
+    window.onload = () => {
+      loadOrders();
+    };
+  </script>
+</body>
+</html>
